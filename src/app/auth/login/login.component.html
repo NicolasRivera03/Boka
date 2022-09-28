@@ -1,0 +1,48 @@
+<div class="login">
+  <div class="login__left">
+    <div class="form">
+      <h3 class="title">Login</h3>
+      <p class="description">Please enter your credentials to proceed.</p>
+      <form
+        [formGroup]="form"
+        [appFormValidate]="form"
+        (ngSubmit)="onSubmit()"
+        class="form"
+      >
+        <div class="form-group">
+          <label for="txtEmail">Email</label>
+          <input
+            type="text"
+            id="txtEmail"
+            class="form-control"
+            formControlName="email"
+          />
+        </div>
+
+        <div class="controls">
+          <div class="form-group">
+            <label for="txtPassword">Password</label>
+            <input
+              type="password"
+              id="txtPassword"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+        </div>
+
+        <button
+          class="btn-primary-bg btn-arrow"
+          type="submit"
+          [ngClass]="{ spinner: isLoading }"
+          [disabled]="isLoading"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="login__right">
+    <img src="assets/img/resources/login-woman.png" alt="BOCA" />
+  </div>
+</div>

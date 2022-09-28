@@ -1,0 +1,100 @@
+.cdk-overlay-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mat-snack-bar-container {
+  background-color: #fff5f6;
+  border: 1px solid #ba484c;
+}
+.mat-simple-snackbar {
+  $size-icon: 1.8rem;
+  color: #ba484c;
+  &::before {
+    content: "";
+    position: relative;
+    background-size: $size-icon $size-icon;
+    background-image: url("/assets/img/icon/warning.png");
+    background-repeat: no-repeat;
+    width: $size-icon;
+    height: $size-icon;
+    left: -0.6rem;
+    padding-right: $size-icon;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background-size: $size-icon $size-icon;
+    background-image: url("/assets/img/icon/times.png");
+    width: $size-icon;
+    height: $size-icon;
+    right: 1rem;
+    z-index: -1;
+  }
+}
+
+.mat-simple-snackbar-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  .mat-simple-snackbar {
+    color: #155724;
+    &::before {
+      width: 3.6rem !important;
+      background-image: url("/assets/img/icon/circle-check-green.png") !important;
+      background-repeat: no-repeat;
+    }
+    &::after {
+      background-image: url("/assets/img/icon/times-green.png") !important;
+    }
+  }
+}
+.mat-simple-snackbar-action {
+  color: transparent;
+}
+
+.mat-tab-group {
+  height: calc(100% - 6.8rem);
+
+  .mat-ink-bar {
+    display: none;
+  }
+
+  .mat-tab-header {
+    border: none;
+    box-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.05);
+  }
+
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+
+  .mat-tab-label {
+    align-items: flex-end;
+    color: $color-tertiary !important;
+    opacity: 1;
+    padding: 0;
+  }
+
+  .mat-tab-label-content {
+    font-family: $font-family-regular;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .mat-tab-label-active {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $color-tertiary !important;
+      width: 80%;
+      height: 4px;
+      left: 10%;
+      top: 89%;
+    }
+    .mat-tab-label-content {
+      font-family: $font-family-bold;
+    }
+  }
+}
