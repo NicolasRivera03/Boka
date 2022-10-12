@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppMockInterceptorService } from './core/interceptors/app-mock-interceptor.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +16,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatDialogModule,
   ],
   providers: [
     {

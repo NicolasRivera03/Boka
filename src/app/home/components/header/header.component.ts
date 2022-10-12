@@ -2,12 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { iUser } from '@app/core/model/user.model';
 import { Router } from '@angular/router';
 import { CONSTANTS } from '../../../shared/constants/constant';
-import {
-  IDialogButtons,
-  IDialogCallback,
-  IDialogParams,
-} from '@app/core/model/dialog.model';
-import { UIService } from '../../../core/ui/ui.service';
 
 @Component({
   selector: 'home-header',
@@ -18,7 +12,7 @@ export class HeaderComponent implements OnInit {
   @Input() user: iUser;
 
   public showMenu: boolean;
-  constructor(private _router: Router, private _iuService: UIService) {}
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {
     this._setInitialValues();
@@ -28,7 +22,7 @@ export class HeaderComponent implements OnInit {
     this.showMenu = !this.showMenu;
   }
 
-  public onLogout(): void {
+  public onSignOut() {
     this._router.navigateByUrl(CONSTANTS.ROUTES.LOGIN);
   }
 

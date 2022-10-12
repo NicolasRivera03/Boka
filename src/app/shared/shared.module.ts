@@ -3,19 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormValidateDirective } from './directives/form-validate.directive';
 import { SharedService } from './shared.service';
-import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
-  declarations: [FormValidateDirective, DialogComponent],
+  declarations: [FormValidateDirective],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  entryComponents: [DialogComponent],
-
-  exports: [
-    FormsModule,
-    ReactiveFormsModule,
-    FormValidateDirective,
-    DialogComponent,
-  ],
+  exports: [FormsModule, ReactiveFormsModule, FormValidateDirective],
   providers: [SharedService],
 })
 export class SharedModule {}
